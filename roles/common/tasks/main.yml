@@ -1,0 +1,7 @@
+---
+
+- name: Creates NGINX site-available directory
+  file: path=/etc/nginx/sites-available state=directory
+
+- name: Creates NGINX site-enabled directory
+  file: path=/etc/nginx/sites-enabled state=directory

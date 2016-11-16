@@ -1,0 +1,18 @@
+---
+
+- hosts: web
+  vars_files:
+    - secret
+  become: yes
+
+  roles:
+    - common
+    - franklinkim.nginx
+  vars:
+    nginx_worker_processes: 1
+    nginx_remove_default: yes
+
+    nginx_sites:
+      - id: magento.cvlabs.net
+        add_webroot: yes
+        name: magento.cvlabs.net
